@@ -38,7 +38,7 @@ async def predict_csv(file:UploadFile=File(...)):
     if "Embarked" in new_data.columns:
         new_data["Embarked"].fillna(new_data["Embarked"].mode()[0],inplace=True)
 
-    if "Sibsp" in new_data.columns and "Parch" in new_data.columns:
+    if "SibSp" in new_data.columns and "Parch" in new_data.columns:
         new_data["Family"] = new_data["SibSp"] + new_data["Parch"]
         new_data.drop(["SibSp","Parch"],axis=1,inplace=True)
 
