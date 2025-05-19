@@ -29,7 +29,7 @@ async def predict_csv(file:UploadFile=File(...)):
         'embarked':'Embarked'
         },inplace=True)
     
-    drop_cols=['PassengerId',"Name","Ticket","Fare","Cabin"]
+    drop_cols=['PassengerId',"name","ticket","fare","cabin"]
     new_data.drop(drop_cols,axis=1,inplace=True)
 
     if "Age"in new_data.columns:
